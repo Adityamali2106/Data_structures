@@ -1156,6 +1156,7 @@ void SinglyCLL<T> :: DeleteAll()
 
     temp = this -> first;
     this -> last -> next = NULL;
+    this -> last = NULL;
 
     while(this -> first != NULL)
     {
@@ -1528,6 +1529,7 @@ void DoublyCLL<T> :: DeleteAll()
 
     temp = this -> first;
     this -> last -> next = NULL;
+    this -> last = NULL;
 
     while(this -> first != NULL)
     {
@@ -1675,6 +1677,8 @@ int main()
     sobj -> Display();
     cout<<"Number of elements are : "<<sobj -> Count()<<"\n";
 
+    sobj -> DeleteAll();
+
     delete sobj;
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -1717,8 +1721,11 @@ int main()
 
     DCLLobj -> Display();
     cout<<"Number of nodes are : "<<DCLLobj -> Count()<<"\n";
+
+    DCLLobj -> DeleteAll();
     
     delete DCLLobj;
 
     return 0;
+
 }
